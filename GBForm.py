@@ -93,7 +93,9 @@ class MainForm(QWidget):
             return
 
         if self and configer.coreref:
+            self.setHidden(True)
             configer.coreref.run(configer)
+            self.setHidden(False)
 
 
 #####################################################################

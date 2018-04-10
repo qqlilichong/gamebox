@@ -11,13 +11,10 @@ class Core:
         self.comment = 'Win32 核心'
 
     def init(self):
-        self
         return True
 
     def run(self, configer):
-        self
-        configer
-        os
+        os.system(os.path.join(configer.dir, configer.main))
         return True
 
 

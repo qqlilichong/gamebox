@@ -26,6 +26,15 @@ class GameCoreX:
                 self.cores[name] = __import__(name).Core()
                 print('core loaded  : %s' % name)
 
+        removelist = []
+        for name, core in self.cores.items():
+            if not core.init():
+                removelist.append(name)
+                print('core init failed : %s' % name)
+
+        for name in removelist:
+            self.cores.pop(name)
+
         print('')
         print('############    end    #####################')
         print('')
